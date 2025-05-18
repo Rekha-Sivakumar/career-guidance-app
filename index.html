@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Career Guidance Hub</h2>
+            </div>
+            <div class="sidebar-menu">
+                <h3>Navigation</h3>
+                <ul>
+                    <li class="active" data-page="home"><i class="fas fa-home"></i> Home</li>
+                    <li data-page="educational-pathways"><i class="fas fa-graduation-cap"></i> Educational Pathways</li>
+                    <li data-page="education-path-analyzer"><i class="fas fa-chart-line"></i> Education Path Analyzer</li>
+                    <li data-page="career-domains"><i class="fas fa-building"></i> Career Domains</li>
+                    <li data-page="job-roles"><i class="fas fa-briefcase"></i> Job Roles</li>
+                    <li data-page="personalized-guidance"><i class="fas fa-user"></i> Personalized Guidance</li>
+                </ul>
+                <div class="sidebar-section">
+                    <h3>Database Features</h3>
+                    <ul>
+                        <li data-page="database-explorer"><i class="fas fa-database"></i> Database Explorer</li>
+                    </ul>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Search Careers</h3>
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Enter keywords">
+                        <button id="search-button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- Content will be loaded here dynamically -->
+            <div id="page-content">
+                <!-- Home Page Content (Default) -->
+                <div class="page-section active" id="home-page">
+                    <h1>Welcome to the Career Guidance Hub</h1>
+                    <p>Your comprehensive resource for exploring career opportunities and educational pathways.</p>
+                    
+                    <div class="feature-cards">
+                        <div class="card">
+                            <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>Educational Pathways</h3>
+                            <p>Explore different educational routes to reach your career goals.</p>
+                            <button class="card-button" data-page="educational-pathways">Explore</button>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon"><i class="fas fa-building"></i></div>
+                            <h3>Career Domains</h3>
+                            <p>Discover diverse career domains and specializations.</p>
+                            <button class="card-button" data-page="career-domains">Explore</button>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+                            <h3>Job Roles</h3>
+                            <p>Learn about specific job roles, requirements, and growth opportunities.</p>
+                            <button class="card-button" data-page="job-roles">Explore</button>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-icon"><i class="fas fa-user"></i></div>
+                            <h3>Personalized Guidance</h3>
+                            <p>Get customized career recommendations based on your profile.</p>
+                            <button class="card-button" data-page="personalized-guidance">Explore</button>
+                        </div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h2>How to Use This Platform</h2>
+                        <ul>
+                            <li><strong>Explore Educational Pathways:</strong> Understand various educational routes and their career outcomes.</li>
+                            <li><strong>Analyze Career Domains:</strong> Dive into different career sectors and their subdomains.</li>
+                            <li><strong>Research Job Roles:</strong> Get detailed information about specific job positions.</li>
+                            <li><strong>Receive Personalized Guidance:</strong> Create a profile to get tailored career recommendations.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Other page sections will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Career Guidance Hub | Career Information Platform</p>
+    </footer>
+    
+    <!-- Templates for other pages -->
+    <template id="educational-pathways-template">
+        <h1>Educational Pathways</h1>
+        <p>Explore different educational paths and discover where they can lead in your career journey.</p>
+        
+        <div class="pathway-selector">
+            <h3>Select an Educational Pathway:</h3>
+            <select id="pathway-select">
+                <option value="">Select a pathway...</option>
+                <!-- Options will be populated dynamically -->
+            </select>
+        </div>
+        
+        <div id="pathway-visualization" class="visualization-container">
+            <!-- Pathway visualization will be rendered here -->
+            <p class="placeholder-text">Select a pathway to visualize</p>
+        </div>
+        
+        <div id="pathway-details" class="details-container">
+            <!-- Pathway details will be shown here -->
+        </div>
+    </template>
+    
+    <template id="education-path-analyzer-template">
+        <h1>Education Path Analyzer</h1>
+        <p>This page provides a detailed analysis of education paths and shows which career domains 
+        and branches are accessible at each education level. Use this information to understand
+        the career opportunities available at different education levels.</p>
+        
+        <div class="education-level-selector">
+            <h3>Select an Education Level:</h3>
+            <select id="education-level-select">
+                <option value="">Select an education level...</option>
+                <!-- Options will be populated dynamically -->
+            </select>
+        </div>
+        
+        <div id="career-opportunities" class="opportunities-container">
+            <!-- Career opportunities will be shown here -->
+            <p class="placeholder-text">Select an education level to see available career opportunities</p>
+        </div>
+        
+        <div class="education-paths">
+            <h2>Education Progression Paths</h2>
+            <p>Education is a journey with multiple paths. Here are common progression routes:</p>
+            
+            <div class="paths-container">
+                <div class="path-card">
+                    <h3>Traditional Academic Path</h3>
+                    <div class="path-diagram">
+                        High School → Bachelor's Degree → Master's Degree → Doctoral Degree
+                    </div>
+                    <p>Best for: Research, academia, specialized professions like medicine, law</p>
+                </div>
+                
+                <div class="path-card">
+                    <h3>Associate's Degree Path</h3>
+                    <div class="path-diagram">
+                        High School → Associate's Degree → Bachelor's Degree → Master's Degree
+                    </div>
+                    <p>Best for: Reducing costs, testing interest areas, transferring to 4-year programs</p>
+                </div>
+                
+                <div class="path-card">
+                    <h3>Vocational/Technical Path</h3>
+                    <div class="path-diagram">
+                        High School → Vocational Training → Professional Certification → Industry Experience
+                    </div>
+                    <p>Best for: Hands-on careers, skilled trades, technical roles</p>
+                </div>
+                
+                <div class="path-card">
+                    <h3>Continuous Learning</h3>
+                    <p>Modern careers often require ongoing education through:</p>
+                    <ul>
+                        <li>Professional certifications</li>
+                        <li>Industry-specific credentials</li>
+                        <li>Specialized training programs</li>
+                        <li>Online courses and bootcamps</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="job-opportunities-chart" class="chart-container">
+            <!-- Job opportunities chart will be rendered here -->
+        </div>
+        
+        <div id="domain-by-education" class="domains-container">
+            <!-- Domain by education level will be shown here -->
+        </div>
+        
+        <div class="skills-needed">
+            <h2>Skills Needed for Career Advancement</h2>
+            <p>Regardless of your education path, these skills are crucial for advancement:</p>
+            
+            <div class="skills-grid">
+                <div class="skills-column">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>Programming/coding proficiency</li>
+                        <li>Data analysis</li>
+                        <li>Digital literacy</li>
+                        <li>Technical writing</li>
+                        <li>Software proficiency</li>
+                        <li>Industry-specific tools</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-column">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Critical thinking</li>
+                        <li>Problem-solving</li>
+                        <li>Time management</li>
+                        <li>Leadership</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="advice-box">
+            <h3>Career Planning Advice</h3>
+            <p>Your education should align with your career goals, personal interests, learning style, and financial situation.
+            Consider job market demand, return on investment, and work-life balance when planning your education path.</p>
+        </div>
+    </template>
+    
+    <template id="career-domains-template">
+        <h1>Career Domains</h1>
+        <p>Explore various career domains and understand the scope and opportunities in each field.</p>
+        
+        <div class="domains-grid" id="domains-container">
+            <!-- Career domains will be populated here -->
+            <p class="loading-text">Loading career domains...</p>
+        </div>
+    </template>
+    
+    <template id="job-roles-template">
+        <h1>Job Roles</h1>
+        <p>Discover detailed information about specific job roles, including requirements, responsibilities, and career paths.</p>
+        
+        <div class="filter-section">
+            <div class="filter-group">
+                <label for="domain-filter">Filter by Domain:</label>
+                <select id="domain-filter">
+                    <option value="">All Domains</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="subdomain-filter">Filter by Subdomain:</label>
+                <select id="subdomain-filter">
+                    <option value="">All Subdomains</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="education-filter">Filter by Education:</label>
+                <select id="education-filter">
+                    <option value="">All Education Levels</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+        </div>
+        
+        <div class="job-roles-grid" id="job-roles-container">
+            <!-- Job roles will be populated here -->
+            <p class="loading-text">Loading job roles...</p>
+        </div>
+    </template>
+    
+    <template id="personalized-guidance-template">
+        <h1>Personalized Guidance</h1>
+        <p>Complete your profile to receive tailored career recommendations based on your interests, skills, and education.</p>
+        
+        <div class="profile-section">
+            <h2>Your Profile</h2>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="education-level">Education Level:</label>
+                    <select id="education-level" required>
+                        <option value="">Select your education level</option>
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Interests:</label>
+                    <div id="interests-container" class="checkbox-grid">
+                        <!-- Interests checkboxes will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Skills:</label>
+                    <div id="skills-container" class="checkbox-grid">
+                        <!-- Skills checkboxes will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="career-goals">Career Goals:</label>
+                    <textarea id="career-goals" placeholder="Describe your career goals..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Preferred Industries:</label>
+                    <div id="industries-container" class="checkbox-grid">
+                        <!-- Industries checkboxes will be populated here -->
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-button">Get Recommendations</button>
+            </form>
+        </div>
+        
+        <div id="recommendations-container" class="recommendations-section" style="display: none;">
+            <h2>Your Career Recommendations</h2>
+            <div id="recommendations-list">
+                <!-- Recommendations will be populated here -->
+            </div>
+        </div>
+    </template>
+    
+    <template id="database-explorer-template">
+        <h1>Database Explorer</h1>
+        <p>Explore the database tables and relationships that power the Career Guidance Hub.</p>
+        
+        <div class="database-nav">
+            <ul>
+                <li class="active" data-table="education-levels">Education Levels</li>
+                <li data-table="domains">Domains</li>
+                <li data-table="subdomains">Subdomains</li>
+                <li data-table="job-roles">Job Roles</li>
+                <li data-table="skills">Skills</li>
+                <li data-table="career-paths">Career Paths</li>
+            </ul>
+        </div>
+        
+        <div class="table-container" id="table-display">
+            <!-- Table data will be displayed here -->
+            <p class="loading-text">Select a table to view</p>
+        </div>
+        
+        <div class="database-stats">
+            <h3>Database Statistics</h3>
+            <div id="db-stats-container" class="stats-grid">
+                <!-- Database statistics will be populated here -->
+                <p class="loading-text">Loading statistics...</p>
+            </div>
+        </div>
+    </template>
+    
+    <template id="domain-detail-template">
+        <div class="back-button">
+            <button id="back-to-domains"><i class="fas fa-arrow-left"></i> Back to Domains</button>
+        </div>
+        
+        <h1 id="domain-title">Domain Name</h1>
+        <p id="domain-description">Domain description will be displayed here.</p>
+        
+        <div class="domain-details">
+            <div class="detail-section">
+                <h3>Industry Trends</h3>
+                <p id="domain-trends">Industry trends will be displayed here.</p>
+            </div>
+            
+            <div class="detail-section">
+                <h3>Growth Outlook</h3>
+                <p id="domain-growth">Growth outlook will be displayed here.</p>
+            </div>
+        </div>
+        
+        <div class="subdomains-section">
+            <h2>Subdomains</h2>
+            <div id="subdomains-container" class="subdomains-grid">
+                <!-- Subdomains will be populated here -->
+            </div>
+        </div>
+        
+        <div class="key-skills-section">
+            <h2>Key Skills for This Domain</h2>
+            <div id="domain-skills" class="skills-tags">
+                <!-- Skills will be populated here -->
+            </div>
+        </div>
+        
+        <div class="education-paths-section">
+            <h2>Recommended Education Paths</h2>
+            <div id="education-paths" class="education-paths-list">
+                <!-- Education paths will be populated here -->
+            </div>
+        </div>
+    </template>
+    
+    <template id="subdomain-detail-template">
+        <div class="back-button">
+            <button id="back-to-domain"><i class="fas fa-arrow-left"></i> Back to Domain</button>
+        </div>
+        
+        <h1 id="subdomain-title">Subdomain Name</h1>
+        <p id="subdomain-description">Subdomain description will be displayed here.</p>
+        
+        <div class="parent-domain">
+            <h3>Parent Domain: <span id="parent-domain-name">Domain Name</span></h3>
+        </div>
+        
+        <div class="job-roles-section">
+            <h2>Job Roles in This Subdomain</h2>
+            <div id="subdomain-job-roles" class="job-roles-grid">
+                <!-- Job roles will be populated here -->
+            </div>
+        </div>
+        
+        <div class="tools-section">
+            <h2>Tools & Technologies</h2>
+            <div id="subdomain-tools" class="tools-list">
+                <!-- Tools will be populated here -->
+            </div>
+        </div>
+        
+        <div class="career-outlook-section">
+            <h2>Career Outlook</h2>
+            <div id="career-outlook" class="outlook-details">
+                <!-- Career outlook will be populated here -->
+            </div>
+        </div>
+    </template>
+    
+    <template id="job-role-detail-template">
+        <div class="back-button">
+            <button id="back-to-subdomain"><i class="fas fa-arrow-left"></i> Back to Subdomain</button>
+        </div>
+        
+        <h1 id="job-role-title">Job Role Title</h1>
+        <p id="job-role-description">Job role description will be displayed here.</p>
+        
+        <div class="path-info">
+            <p><strong>Domain:</strong> <span id="job-role-domain">Domain Name</span></p>
+            <p><strong>Subdomain:</strong> <span id="job-role-subdomain">Subdomain Name</span></p>
+        </div>
+        
+        <div class="job-details">
+            <div class="detail-box">
+                <h3>Required Education</h3>
+                <p id="required-education">Education level will be displayed here.</p>
+            </div>
+            
+            <div class="detail-box">
+                <h3>Salary Range</h3>
+                <p id="salary-range">Salary range will be displayed here.</p>
+            </div>
+            
+            <div class="detail-box">
+                <h3>Growth Potential</h3>
+                <p id="growth-potential">Growth potential will be displayed here.</p>
+            </div>
+        </div>
+        
+        <div class="skills-section">
+            <h2>Required Skills</h2>
+            <div id="required-skills" class="skills-tags">
+                <!-- Skills will be populated here -->
+            </div>
+        </div>
+        
+        <div class="next-steps-section">
+            <h2>Next Career Steps</h2>
+            <div id="next-steps" class="next-steps-list">
+                <!-- Next steps will be populated here -->
+            </div>
+        </div>
+    </template>
+    
+    <template id="search-results-template">
+        <h1>Search Results</h1>
+        <p>Results for: <strong id="search-query">Search query</strong></p>
+        
+        <div class="search-results-container">
+            <div class="result-section" id="domain-results">
+                <h2>Domains</h2>
+                <div class="results-list domains-results">
+                    <!-- Domain results will be populated here -->
+                </div>
+            </div>
+            
+            <div class="result-section" id="subdomain-results">
+                <h2>Subdomains</h2>
+                <div class="results-list subdomains-results">
+                    <!-- Subdomain results will be populated here -->
+                </div>
+            </div>
+            
+            <div class="result-section" id="job-role-results">
+                <h2>Job Roles</h2>
+                <div class="results-list job-roles-results">
+                    <!-- Job role results will be populated here -->
+                </div>
+            </div>
+            
+            <div class="result-section" id="skill-results">
+                <h2>Skills</h2>
+                <div class="results-list skills-results">
+                    <!-- Skill results will be populated here -->
+                </div>
+            </div>
+        </div>
+        
+        <div id="no-results" class="no-results-message" style="display: none;">
+            <p>No results found for your search. Please try different keywords.</p>
+        </div>
+    </template>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
